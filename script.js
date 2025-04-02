@@ -80,3 +80,20 @@ function generateQuote() {
 document.getElementById("new-quote").addEventListener("click", generateQuote);
 
 generateQuote();
+
+function copyQuote() {
+    const quoteText = document.getElementById("quote").textContent;
+
+    const tempTextArea = document.createElement("textarea");
+    tempTextArea.value = quoteText;
+    document.body.appendChild(tempTextArea);
+
+    tempTextArea.select();
+    document.execCommand("copy");
+
+    document.body.removeChild(tempTextArea);
+
+    alert("copied to clipboard!");
+}
+
+document.getElementById("copy-quote").addEventListener("click", copyQuote);
