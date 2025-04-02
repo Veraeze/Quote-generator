@@ -86,6 +86,7 @@ document.getElementById("new-quote").addEventListener("click", generateQuote);
 
 generateQuote();
 
+
 function copyQuote() {
     const quoteText = document.getElementById("quote").textContent;
 
@@ -103,8 +104,18 @@ function copyQuote() {
 
 document.getElementById("copy-quote").addEventListener("click", copyQuote);
 
+
 function toggleDarkMode() {
     document.body.classList.toggle("dark-mode");
 }
 
 document.getElementById("dark-mode-toggle").addEventListener("click", toggleDarkMode)
+
+
+function tweetQuote() {
+    const quoteText = document.getElementById("quote").textContent;
+    const twitterURL = `https://twitter.com/intent/tweet?text=${encodeURIComponent(quoteText)}`;
+    window.open(twitterURL, "_blank");
+}
+
+document.getElementById("tweet-quote").addEventListener("click", tweetQuote);
