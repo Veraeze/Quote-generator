@@ -119,3 +119,22 @@ function tweetQuote() {
 }
 
 document.getElementById("tweet-quote").addEventListener("click", tweetQuote);
+
+
+
+const savedQuotes = [];
+
+function saveQuote() {
+    const quoteText = document.getElementById("quote").textContent;
+    
+    if (!savedQuotes.includes(quoteText)) {
+        savedQuotes.push(quoteText);
+
+        const savedQuotesList = document.getElementById("saved-quotes");
+        const listItem = document.createElement("li");
+        listItem.textContent = quoteText;
+        savedQuotesList.appendChild(listItem);
+    }
+}
+
+document.getElementById("save-quote").addEventListener("click", saveQuote);
