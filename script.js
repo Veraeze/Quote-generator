@@ -102,3 +102,9 @@ function copyQuote() {
 }
 
 document.getElementById("copy-quote").addEventListener("click", copyQuote);
+
+function toggleDarkMode() {
+    document.body.classList.toggle("dark-mode");
+}
+
+document.getElementById("dark-mode-toggle").addEventListener("click", toggleDarkMode)
