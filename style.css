@@ -10,7 +10,7 @@ body {
     width: 50%;
     margin: 100px auto;
     padding: 20px;
-    background-color: white;
+    background-color: pink;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
 }
@@ -25,7 +25,7 @@ body {
 button {
     padding: 10px 20px;
     font-size: 16px;
-    background-color: #007BFF;
+    background-color: palevioletred;
     color: white;
     border: none;
     border-radius: 5px;
