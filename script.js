@@ -129,6 +129,8 @@ function saveQuote() {
     
     if (!savedQuotes.includes(quoteText)) {
         savedQuotes.push(quoteText);
+        localStorage.setItem("savedQuotes", JSON.stringify(savedQuotes));
+        displaySavedQuotes();
 
         const savedQuotesList = document.getElementById("saved-quotes");
         const listItem = document.createElement("li");
@@ -138,3 +140,42 @@ function saveQuote() {
 }
 
 document.getElementById("save-quote").addEventListener("click", saveQuote);
+
+function displaySavedQuotes() {
+    const savedList = document.getElementById("saved-quotes-list");
+    savedList.innerHTML = "";
+
+    savedQuotes.forEach((quote, index) => {
+        const listItem = document.createElement("li");
+        listItem.textContent = quote;
+
+        const unsaveButton = document.createElement("button");
+        unsaveButton.textContent = "Unsave";
+        unsaveButton.classList.add("unsave-btn");
+        unsaveButton.onclick = function(){
+            unsaveQuote(index);
+        };
+
+        listItem.appendChild(unsaveButton);
+        savedList.appendChild(listItem);
+    });
+}
+
+function unsaveQuote(index) {
+    savedQuotes.splice(index, 1);
+    localStorage.setItem("savedQuotes", JSON.stringify(savedQuotes));
+    displaySavedQuotes();
+    
+}
+
+ document.getElementById("toggle-saved-quotes").addEventListener("click", function() {
+    const savedList = document.getElementById("saved-quotes-list");
+
+    if (savedList.classList.contains("hidden")) {
+        savedList.classList.remove("hidden");
+        this.textContent = "Hide Saved Quotes";
+    } else{
+        savedList.classList.add("hidden");
+        this.textContent = "Show Saved Quotes"
+    }
+ });

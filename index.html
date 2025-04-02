@@ -7,15 +7,22 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    
     <div id="quote-box">
         <h1>Girl boss quotes</h1>
         <p id="quote">Click the button to get a quote!</p>
-        <button id="new-quote">New</button>
-        <button id="copy-quote">Copy</button>
-        <button id="tweet-quote">Tweet</button>
-        <button id="save-quote">Save</button>
-        <h2>Saved Quotes</h2>
-        <ul id="saved-quotes"></ul>
+
+        <div class="button-container">
+            <button id="new-quote">New</button>
+            <button id="copy-quote">Copy</button>
+            <button id="tweet-quote">Tweet</button>
+            <button id="save-quote">Save</button>
+        </div>
+
+        <div class="saved-quotes-cont">
+            <button id="toggle-saved-quotes">Saved Quotes</button>
+            <ul id="saved-quotes-list" class="hidden"></ul>
+        </div>
     </div>
     <div>
         <button id="dark-mode-toggle">Dark mode</button>

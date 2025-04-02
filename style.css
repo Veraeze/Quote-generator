@@ -7,12 +7,14 @@ body {
 }
 
 #quote-box {
-    width: 50%;
+    width: 60%;
     margin: 100px auto;
     padding: 20px;
     background-color: pink;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+    border-radius: 10px;
+    border: 2px solid #333;
+    text-align: center;
 }
 
 #quote {
@@ -49,6 +51,36 @@ button {
 
 button:hover {
     background-color: #0056b3;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+.saved-quotes-cont {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.unsave-btn {
+    margin-left: 10px;
+    padding: 5px 8px;
+    background-color: pink;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.unsave-btn:hover {
+    background-color: darkred;
 }
 
 .dark-mode {
