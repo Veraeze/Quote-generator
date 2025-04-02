@@ -20,6 +20,21 @@ body {
     font-weight: bold;
     color: #333;
     margin-bottom: 20px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+@keyframes fadeIn{
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.fade-in{
+    animation: fadeIn 0.5s ease-in-out forwards;
 }
 
 button {

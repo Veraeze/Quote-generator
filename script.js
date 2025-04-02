@@ -70,10 +70,15 @@ const quotes = [
 
 function generateQuote() {
     const randomIndex = Math.floor(Math.random() * quotes.length);
-
     const randomQuote = quotes[randomIndex];
 
-    document.getElementById("quote").textContent = randomQuote;
+    const quoteElement = document.getElementById("quote");
+    quoteElement.classList.remove("fade-in");
+
+    setTimeout(() => {
+        quoteElement.textContent = randomQuote;
+        quoteElement.classList.add("fade-in");
+    }, 50)
     
 }
 
